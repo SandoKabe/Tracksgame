@@ -1,6 +1,7 @@
 Tracksgame est un jeu de piste à réaliser au Musée du Louvre à l'aile Sully,
 salle 917, 918 et 919.
-Le projet est réalisé avec le framework Javascript [VueJS](https://vuejs.org/)
+***
+Le projet est réalisé avec le framework Javascript [VueJS](https://vuejs.org/).
 
 
 # myvuetifyjs
