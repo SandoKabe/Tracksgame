@@ -39,7 +39,7 @@ export default {
       if (process.env.NODE_ENV === '"production"') {
         return false
       }
-      return true
+      return false
     },
     logStyle: function (element) {
       return 'content-log-' + element.substring(0, 4) // Get error type info, warn, erro, crit

@@ -55,13 +55,13 @@ export default {
     },
     fetchData: function () {
       // Add local storage json
-      var that = this
+      var _this = this
       GameRepository.getGame('index').then(data => {
-        // console.debug(data)
-        that.game = data.game
-        localStorage.index = JSON.stringify(that.game)
+        console.debug(data)
+        _this.game = data.game
+        localStorage.index = JSON.stringify(_this.game)
       })
-        .catch(error => console.error('toto : ' + error))
+        .catch(error => console.error('Json load failed : ' + error))
     }
   }
 }

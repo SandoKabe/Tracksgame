@@ -10,3 +10,5 @@ export const API_URL = 'Un truc en dur'
 export const PATH_GAME = ''
 
 export const DEBUG = true
+
+export const LOG_LEVEL = 5

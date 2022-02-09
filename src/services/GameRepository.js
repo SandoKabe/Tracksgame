@@ -1,16 +1,16 @@
 // Firebase App is always required and must be first
-var firebase = require('firebase/app')
+// var firebase = require('firebase/app')
 require('firebase/storage')
 
 // var _ = require('lodash')
 
-var config = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET
-}
+// var config = {
+//   apiKey: process.env.FIREBASE_API_KEY,
+//   projectId: process.env.FIREBASE_PROJECT_ID,
+//   storageBucket: process.env.FIREBASE_STORAGE_BUCKET
+// }
 
-firebase.initializeApp(config)
+// firebase.initializeApp(config)
 
 // TODO : externalise firebase access
 
@@ -224,4 +224,5 @@ function preloadMedia (mediaUrl) {
   req.send()
 }
 
-export default new GameRepository(firebase.app().storage())
+// export default new GameRepository(firebase.app().storage())
+export default new GameRepository('toto')

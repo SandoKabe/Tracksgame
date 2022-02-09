@@ -2,10 +2,10 @@
   <div class="content">
     <div class="content-title"></div>
     <div class="content-subtitle"></div>
-    <div class="content-description">
+    <div class="content-description" v-if="enigmaType === 'map'">
       <span> Début : </span><span class="content-description-info">{{startDate}}</span>
       <span> Etapes réussies: </span><span class="content-description-info"> {{stepDoneNb}}/{{stepIndexMax}} </span>
-      <span> Indices obtenus </span><span class="content-description-info" v-for="item in cluesFound" :key="item" v-if="enigmaType === 'map'"><img :src="item" /></span>
+      <span> Indices obtenus </span><span class="content-description-info" v-for="item in cluesFound" :key="item" ><img :src="item" /></span>
     </div>
     <div class="content-game"></div>
   </div>

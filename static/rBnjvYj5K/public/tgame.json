@@ -69,7 +69,6 @@
       "shortDescription": "#Puzzle",
       "stepDescription": "Tu sais, le musée du Louvre n'a pas toujours été ainsi. Essaie de replacer les pièces du puzzle dans le bon ordre :",
       "info": "",
-      "classe": "fa fa-arrow-right",
       "winMsg": "Voici ton nouvel indice: ",
       "errorMsg": [
         "Non, essaie encore une fois"
@@ -113,9 +112,9 @@
       "shortDescription": "#Le dénouement",
       "stepDescription": "Es-tu en mesure de percer le mystère ? Sers toi des indices pour compléter le message ci-dessous",
       "info": [
-        {"text": "Le" , "indice":"3"},
+        {"text": "Le" , "indice":"1"},
         {"text": "juin" , "indice":"2"},
-        {"text": "alias Bog dérobait " , "indice":"1"},
+        {"text": "alias Bog dérobait " , "indice":"3"},
         {"text": "d'" , "indice":"4"}
       ],
       "classe": "fa fa-check",
@@ -132,10 +131,10 @@
       "type": "final",
       "title": "Etape 5",
       "shortDescription": "#Le dénouement",
-      "stepDescription": "The End",
+      "stepDescription": "Félicitation ! Tu as résolue l'énigme. This is the end.",
       "info": "",
       "classe": "",
-      "winMsg": "",
+      "winMsg": "Félicitation ! Tu as résolue l'énigme",
       "errorMsg": "",
       "indice": "",
       "lat":"",
@@ -150,7 +149,11 @@
       "info": "Qui suis-je",
       "classe": "fa fa-angle-right",
       "winMsg": "Voici ton nouvel indice",
-      "errorMsg": "",
+      "errorMsg": [
+        "Non, retente ta chance !",
+        "Non, attention, C'est ta dernière chance !",
+        "Perdu!"
+      ],
       "indice": "1",
       "lat":"",
       "long":"",

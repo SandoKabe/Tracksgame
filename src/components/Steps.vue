@@ -81,8 +81,7 @@
     && typeof(clues[cluesKey]) !== 'undefined'">
       <i class="far fa-times-circle" v-on:click="close"></i>
       <div class="result-nok error-msg"
-        v-if="error == true
-        && typeof(questions[stepIndex].errorMsg[errorNb-1]) !== 'undefined'"
+        v-if="error == true && typeof(questions[stepIndex].errorMsg[errorNb-1]) !== 'undefined'"
         v-on:click="close">
           {{questions[stepIndex].errorMsg[errorNb-1]}}
       </div>
@@ -101,7 +100,7 @@
     <div class="arrow">
         <span class="arrow-right" v-if="questions[stepIndex].type == 'map-in'" v-on:click="nextStep">
         Visualiser la carte</span>
-        <i :class="questions[stepIndex].classe" v-on:click="nextStep"></i>
+        <i v-bind:class="questions[stepIndex].classe" v-on:click="nextStep"></i>
         <i class="fa fa-angle-left" v-on:click="previous" v-if="stepIndex > 0"></i>
     </div>
   </div>
@@ -248,7 +247,7 @@ export default {
         // Cas ou l on quitte la page Step les cluesFound sont recurer dans le localStorage
         if (Object.keys(this.cluesFound).length === 0 && this.stepIndex !== 0) {
           console.log('cluesFound empty')
-          this.cluesFound = JSON.parse(localStorage.cluesFound)
+          // this.cluesFound = JSON.parse(localStorage.cluesFound)
         }
         this.cluesFound[this.cluesKey] = this.clues[this.cluesKey] /* string() */
         localStorage.cluesFound = JSON.stringify(this.cluesFound)
@@ -276,7 +275,6 @@ export default {
       // Add local storage json
       var that = this
       GameRepository.getGame(this.gameId).then(data => {
-        // console.debug(data)
         that.title = data.title
         that.description = data.description
         that.color = data.color
@@ -407,8 +405,15 @@ export default {
         }
         return
       }
+      if (this.questions[this.stepIndex].type === 'enigme') {
+        if (this.cluesFound.length === this.clues.length) {
+          this.win = true
+          this.error = false
+        }
+        return
+      }
       if (this.questionType2.indexOf(this.questions[this.stepIndex].type) > -1) {
-        if (this.questions[this.stepIndex].response.toLowerCase().trim() === this.questions[this.stepIndex].stepResponse.toLowerCase().trim()) {
+        if (this.questions[this.stepIndex].response.toLowerCase().trim() === this.questions[this.stepIndex].QResponse.toLowerCase().trim()) {
           this.win = true
           this.error = false
         } else {

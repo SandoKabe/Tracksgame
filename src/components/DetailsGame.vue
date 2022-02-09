@@ -67,7 +67,7 @@ export default {
 .content-back {
   background-color: black;
   border: 0px;
-  position: absolute;
+  position: relative;
   margin: 2vw;
   font-size: 8vw;
   color: white
@@ -97,7 +97,8 @@ export default {
 }
 .details-content {
   padding: 5vw;
-  width: 20vw;
+  padding-top: 0vw;
+  width: 50vw;
   position:relative;
 }
 
@@ -125,6 +126,7 @@ export default {
 }
 
 .details-content-title {
+  width: 80vw;
   font-weight: bold;
   color: #FBB50C;
 }
